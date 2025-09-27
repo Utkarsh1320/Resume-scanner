@@ -1,4 +1,6 @@
 from fastapi import APIRouter, BackgroundTasks
+from pyexpat.errors import messages
+
 from app.auth.service import UserService
 from app.models import UserCreate, UserLogin, UserResponse, TokenResponse, EmailVerificationRequest, EmailResendRequest
 
@@ -24,3 +26,6 @@ async def verify_email_get(token: str):
 @router.post("/resend-verification")
 async def resend_verification_email(background_tasks: BackgroundTasks, request: EmailResendRequest ):
     return await UserService.resend_verification_email(background_tasks, request )
+@router.get("/test")
+async def test():
+    return {"messages" : "test"}

@@ -16,7 +16,7 @@ from app.database import users_collection
 from app.models import EmailVerificationRequest, EmailResendRequest
 
 load_dotenv(dotenv_path='app/.env')
-ALGORITHM = os.getenv("ALGORITHM")
+algorithm = os.getenv("ALGORITHM")
 sender_email = os.getenv("FROM_EMAIL")
 sendgrid_api_key = os.getenv("SENDGRID_API_KEY")
 

@@ -1,8 +1,10 @@
 from motor.motor_asyncio import AsyncIOMotorClient
+import os
+from dotenv import load_dotenv
 
-MONGO_DETAILS = "mongodb+srv://umore9939:Utkarsh1320@cluster1.t0mp1ka.mongodb.net/"
+load_dotenv(dotenv_path="app/.env")
+client = AsyncIOMotorClient(os.getenv("MONGO_URL"))
 
-client = AsyncIOMotorClient(MONGO_DETAILS)
 
 db = client.resume
 users_collection = db.get_collection("users")

@@ -33,6 +33,7 @@ class Resume(BaseModel):
     filename: str
     text_content: Optional[str] = None
     user_id: str
+    resume_id:str
 
 class EmailVerificationRequest(BaseModel):
     token: str
