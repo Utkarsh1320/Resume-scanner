@@ -1,3 +1,0 @@
-"date-fns": "^4.1.0",
-    "react-day-picker": "8.10.1",
-    "react-scripts": "5.0.1",
